@@ -8,3 +8,5 @@ module.exports = {
     synchronize: true,
     entities: [process.env.TYPEORM_ENTITIES],
   };
+
+  console.log(process.env.TYPEORM_PORT);

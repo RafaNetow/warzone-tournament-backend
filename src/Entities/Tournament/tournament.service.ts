@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateCourseDto } from './dto/create-tournament.dto';
+import { CreateTournamentDto } from './dto/create-tournament.dto';
 import { Tournament } from './tournament.entity';
 
 
@@ -12,7 +12,7 @@ export class TournamentService {
         private readonly CoursesRepository: Repository<Tournament>,
     ) { }
 
-    async create(createCourseDto: CreateCourseDto): Promise<Tournament> {
+    async create(createCourseDto: CreateTournamentDto): Promise<Tournament> {
         let course = new Tournament();
         course.name = createCourseDto.name;
         return this.CoursesRepository.save(course);

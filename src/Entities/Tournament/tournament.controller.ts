@@ -5,13 +5,13 @@ import { Tournament } from './tournament.entity';
 import { TournamentService } from './tournament.service';
 
 
-@Controller('course')
+@Controller('Tournament')
 export class TournamentsController {
     constructor(private readonly coursesService: TournamentService) { }
 
     @Post()
-    create(@Body() createCourseDto: CreateTournamentDto): Promise<Tournament> {
-        return this.coursesService.create(createCourseDto);
+    create(@Body() createTournamentDto: CreateTournamentDto): Promise<Tournament> {
+        return this.coursesService.create(createTournamentDto);
     }
 
     @Get()

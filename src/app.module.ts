@@ -3,9 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TournamentsModule } from './Entities/Tournament/tournament.module'
+import { WarzoneApiModule } from './Managers/WarzoneApi/warzoneapi.module'
+
 
 @Module({
-  imports: [TournamentsModule, TypeOrmModule.forRoot()],
+  imports: [TournamentsModule, WarzoneApiModule, TypeOrmModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })

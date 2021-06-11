@@ -8,4 +8,11 @@ export class Tournament {
   @Column()
   name: string;
 
+
+  @Column()
+  type: string;
+
+  @Column()
+  pointPerKil: Number;
+
 }

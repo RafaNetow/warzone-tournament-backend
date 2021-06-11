@@ -13,9 +13,11 @@ export class TournamentService {
     ) { }
 
     async create(createCourseDto: CreateTournamentDto): Promise<Tournament> {
-        let course = new Tournament();
-        course.name = createCourseDto.name;
-        return this.CoursesRepository.save(course);
+        let tournament = new Tournament();
+        tournament.name = createCourseDto.name;
+        tournament.pointPerKil = createCourseDto.pointPerKil;
+        tournament.type = createCourseDto.type;
+        return this.CoursesRepository.save(tournament);
     }
 
     async findAll(): Promise<Tournament[]> {

@@ -9,11 +9,10 @@ export class WarzoneApiService {
     async getInfoUser(idUser : string): Promise<UserModelWarzone[]> {
         try {
             console.log("first",idUser)
-            console.log(await API.login("....................", "......................."));
+            console.log(await API.login(process.env.WARZONE_USER, process.env.WARZONE_USER_PASSWORD));
             console.log("all ok")
         } catch (err) {
             console.log(err)
-            //Handle Exception
         }
         return null;
     }
